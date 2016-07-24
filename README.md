@@ -20,14 +20,20 @@ The way it works is:
     - clone Krita git repo,
     - build all dependencies that are shipped with Krita,
     - build Krita itself.
-* So after "docker build" you have an image with all dependencies and some
-  revision of Krita built. The image can be used many times.
+* So after "docker build" you have an image with all dependencies. The image
+  can be used many times.
 * When "docker run" is called, it runs entrypoint.sh, which basically does the
   following:
     - git pull
+    - build last version of Krita.
     - run build-image.sh script shipped with Krita. This script also calls
       "make", so it will rebuild files changed in git repo since image was
       built.
+
+Built binary files for Krita are put under "build/" directory. They are stored
+usage in subsequent compilations. If you want to place them in another
+directory, or do not save them at all, you will need to tweak build-appimage.sh
+script.
 
 # Dependencies
 
@@ -39,6 +45,10 @@ Run
 
     $ ./build-appimage.sh
 
-And wait... it gonna take lot of time, mostly for Qt build.
+And wait... it gonna take a lot of time, mostly for Qt build.
 
 After script finishes, you will find krita*.appimage file under out/ directory.
+
+If you want to obtain the last version of Krita, just run the same script
+again. For the second and all other times, it will run much faster - since
+you already have all dependencies and some version of Krita built.
