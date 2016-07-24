@@ -57,8 +57,7 @@ RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithD
 RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithDebInfo --target ext_poppler
 RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithDebInfo --target ext_gsl
 
-RUN cd /krita && \
-    mkdir /krita_build && \
+RUN mkdir /krita_build && \
     cd /krita_build && \
     . /opt/rh/devtoolset-3/enable && \
     cmake3 /krita \
