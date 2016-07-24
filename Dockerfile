@@ -58,7 +58,6 @@ RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithD
 RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithDebInfo --target ext_gsl
 
 RUN cd /krita && \
-    git checkout rempt/update-dependencies && \
     mkdir /krita_build && \
     cd /krita_build && \
     . /opt/rh/devtoolset-3/enable && \
