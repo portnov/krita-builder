@@ -41,3 +41,4 @@ Run
 
 And wait... it gonna take lot of time, mostly for Qt build.
 
+After script finishes, you will find krita*.appimage file under out/ directory.
