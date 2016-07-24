@@ -7,6 +7,8 @@ This is a dockerfile + shell script which can be used to build Krita AppImage
 from krita git master at any time, so that you can get fresh appimage for
 testing at any moment, without littering your working system with lots of
 development packages.
+The script is mainly intended for Krita enthusiasts, testers and other
+people who want to run the very last version of Krita.
 
 I'm not sure that current implementation is the best way to achieve the
 purpose, but it works.
