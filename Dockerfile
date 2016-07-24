@@ -57,20 +57,8 @@ RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithD
 RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithDebInfo --target ext_poppler
 RUN cd /b && . /opt/rh/devtoolset-3/enable && cmake3 --build . --config RelWithDebInfo --target ext_gsl
 
-RUN mkdir /krita_build && \
-    cd /krita_build && \
-    . /opt/rh/devtoolset-3/enable && \
-    cmake3 /krita \
-      -DCMAKE_INSTALL_PREFIX:PATH=/krita.appdir/usr \
-      -DDEFINE_NO_DEPRECATED=1 \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DPACKAGERS_BUILD=1 \
-      -DBUILD_TESTING=FALSE \
-      -DKDE4_BUILD_TESTS=FALSE \
-      -DHAVE_MEMORY_LEAK_TRACKER=FALSE && \
-    make -j4
-
 VOLUME /out
+VOLUME /krita_build
 
 ADD entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
