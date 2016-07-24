@@ -74,5 +74,6 @@ RUN cd /krita && \
 
 VOLUME /out
 
-ENTRYPOINT ["cd /krita; git pull; /krita/packaging/linux/appimage/build-image.sh"]
+ADD entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
 
