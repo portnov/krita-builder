@@ -26,15 +26,14 @@ The way it works is:
 * When "docker run" is called, it runs entrypoint.sh, which basically does the
   following:
     - git pull
-    - build last version of Krita.
-    - run build-image.sh script shipped with Krita. This script also calls
-      "make", so it will rebuild files changed in git repo since image was
-      built.
+    - build last version of Krita. Note that thanks to `make' it will rebuild
+      only files that were changed in krita git repo since your previous build.
+    - run build-image.sh script to actually build an AppImage.
 
 Built binary files for Krita are put under "build/" directory. They are stored
-usage in subsequent compilations. If you want to place them in another
-directory, or do not save them at all, you will need to tweak build-appimage.sh
-script.
+for later usage in subsequent compilations. If you want to place them in
+another directory, or do not save them at all, you will need to tweak
+build-appimage.sh script.
 
 # Dependencies
 
