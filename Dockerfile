@@ -79,5 +79,6 @@ VOLUME /krita_build
 
 # This script will be executed each time at `docker run'.
 ADD entrypoint.sh /
+ADD build-image.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 

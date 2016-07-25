@@ -19,6 +19,4 @@ cmake3 /krita \
 
 make -j4
 
-cd /krita/packaging/linux/appimage
-
-bash build-image.sh
+bash /build-image.sh
