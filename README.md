@@ -20,8 +20,7 @@ The way it works is:
     - get empty centos 6.6,
     - install all dependencies that can be installed from centos repos, 
     - clone Krita git repo,
-    - build all dependencies that are shipped with Krita,
-    - build Krita itself.
+    - build all dependencies that are shipped with Krita.
 * So after "docker build" you have an image with all dependencies. The image
   can be used many times.
 * When "docker run" is called, it runs entrypoint.sh, which basically does the
